@@ -1,0 +1,10 @@
+<% if @message.message from == nil %>
+<% @messagefrom= "Someone" %>
+<%else%>
+<% @user= User.find(@message.message_from) %>
+<% @messagefrom= @user.username %>
+<%end%>
+
+<h1> <%= @messagefrom %> said "<%= @message.message %>" to <%= @message.user.username %> </h1>
+
+<a href="/profile/<%= message.user.id %>"> Back to <%= @message.user.username %>'s Profile </a>'
